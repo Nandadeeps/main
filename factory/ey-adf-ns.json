@@ -1,0 +1,9 @@
+{
+	"name": "ey-adf-ns",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a1bf0486-4225-4261-ba54-66e9af72e0e9",
+		"tenantId": "ce0d95cb-b0fe-45e9-84b0-697fa27a7bcb"
+	}
+}

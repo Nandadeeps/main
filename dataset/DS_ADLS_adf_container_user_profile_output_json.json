@@ -1,0 +1,20 @@
+{
+	"name": "DS_ADLS_adf_container_user_profile_output_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_eystaccns",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "user-profile/output_json",
+				"fileSystem": "adf-container"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
