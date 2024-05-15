@@ -1,0 +1,56 @@
+{
+	"name": "SetVariablesParameters",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Radius",
+					"value": "1.4"
+				}
+			},
+			{
+				"name": "Set variable1_copy1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Area",
+					"value": ""
+				}
+			}
+		],
+		"parameters": {
+			"p": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"Radius": {
+				"type": "String"
+			},
+			"Area": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}

@@ -40,7 +40,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "area",
-					"value": ""
+					"value": {
+						"value": "@{mul(\n    int(variables('length')),\n    int(variables('width'))\n    )\n}",
+						"type": "Expression"
+					}
 				}
 			},
 			{
