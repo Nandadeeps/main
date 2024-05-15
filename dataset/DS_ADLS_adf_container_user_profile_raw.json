@@ -5,6 +5,11 @@
 			"referenceName": "LS_ADLS_eystaccns",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FileNameD": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
