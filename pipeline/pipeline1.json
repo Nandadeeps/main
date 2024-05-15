@@ -19,12 +19,7 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"wildcardFolderPath": "user-profile/raw",
-							"wildcardFileName": {
-								"value": "@pipeline().parameters.FileNameP",
-								"type": "Expression"
-							},
+							"fileListPath": "adf-container/user-profile/Filenames.txt",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -45,13 +40,7 @@
 				"inputs": [
 					{
 						"referenceName": "DS_ADLS_adf_container_user_profile_raw",
-						"type": "DatasetReference",
-						"parameters": {
-							"FileNameD": {
-								"value": "@pipeline().parameters.FileNameP",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
@@ -62,12 +51,6 @@
 				]
 			}
 		],
-		"parameters": {
-			"FileNameP": {
-				"type": "string",
-				"defaultValue": "users_001.csv"
-			}
-		},
 		"annotations": [],
 		"lastPublishTime": "2024-05-14T06:54:41Z"
 	},
