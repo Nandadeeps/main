@@ -1,5 +1,5 @@
 {
-	"name": "04_ForEachassignment",
+	"name": "02_ForEachAssignment2",
 	"properties": {
 		"activities": [
 			{
@@ -79,7 +79,7 @@
 		},
 		"variables": {
 			"Append": {
-				"type": "Array"
+				"type": "String"
 			}
 		},
 		"folder": {
