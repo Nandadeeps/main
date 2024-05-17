@@ -6,13 +6,55 @@
 				"name": "If Condition1",
 				"type": "IfCondition",
 				"dependsOn": [],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@contains(pipeline().parameters.Listofcities,pipeline().parameters.Citytosearch)",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "City Not Exists",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Ifcityexists",
+								"value": "False"
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "CityExsits",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Ifcityexists",
+								"value": "True"
+							}
+						}
+					]
+				}
 			}
 		],
 		"parameters": {
 			"Listofcities": {
-				"type": "string",
-				"defaultValue": "\"New York\",\"Tokoyo\",\"Mumbai\""
+				"type": "array",
+				"defaultValue": [
+					"New York",
+					"Tokoyo",
+					"Mumbai"
+				]
 			},
 			"Citytosearch": {
 				"type": "string",
