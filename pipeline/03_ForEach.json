@@ -1,0 +1,81 @@
+{
+	"name": "03_ForEach",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.ListofCities",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Append variable1",
+							"type": "AppendVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Append",
+								"value": {
+									"value": "@concat('city=',item())",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "NewList",
+					"value": {
+						"value": "@variables('Append')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"ListofCities": {
+				"type": "array",
+				"defaultValue": [
+					"New York",
+					"Tokoyo",
+					"Mumbai"
+				]
+			}
+		},
+		"variables": {
+			"NewList": {
+				"type": "Array"
+			},
+			"Append": {
+				"type": "Array"
+			}
+		},
+		"folder": {
+			"name": "ControlFlowActivities"
+		},
+		"annotations": []
+	}
+}
