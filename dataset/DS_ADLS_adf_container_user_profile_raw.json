@@ -15,6 +15,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().FileNameD",
+					"type": "Expression"
+				},
 				"folderPath": "user-profile/raw",
 				"fileSystem": "adf-container"
 			},
