@@ -1,0 +1,32 @@
+{
+	"name": "01_IfCondition",
+	"properties": {
+		"activities": [
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
+		"parameters": {
+			"Listofcities": {
+				"type": "string",
+				"defaultValue": "\"New York\",\"Tokoyo\",\"Mumbai\""
+			},
+			"Citytosearch": {
+				"type": "string",
+				"defaultValue": "\"Mysore\""
+			}
+		},
+		"variables": {
+			"Ifcityexists": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "ControlFlowActivities"
+		},
+		"annotations": []
+	}
+}
