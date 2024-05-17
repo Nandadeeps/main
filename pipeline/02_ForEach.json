@@ -1,5 +1,5 @@
 {
-	"name": "03_ForEach",
+	"name": "02_ForEach",
 	"properties": {
 		"activities": [
 			{
@@ -70,7 +70,7 @@
 				"type": "Array"
 			},
 			"Append": {
-				"type": "Array"
+				"type": "String"
 			}
 		},
 		"folder": {
