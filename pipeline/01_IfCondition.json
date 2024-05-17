@@ -58,7 +58,7 @@
 			},
 			"Citytosearch": {
 				"type": "string",
-				"defaultValue": "\"Mysore\""
+				"defaultValue": "Mysore"
 			}
 		},
 		"variables": {
